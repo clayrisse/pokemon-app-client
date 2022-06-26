@@ -10,11 +10,6 @@
     width: 30%;
 }
 
-.flex{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
 button{
     width: 10%;
     height: 40px;
@@ -41,15 +36,20 @@ input{
     width: 60%;
     height: 30px;
     font-weight: bold;
-    text-decoration: none;
+    padding-left: 10px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .flexrow{
     display: flex;
     flex-direction: row;
-   align-content: space-between;
+    justify-content: center;
 }
-.flexrow{
+.flexcenter{
     display: flex;
-    flex-direction: row;
-   height: 50px;
+    justify-content: center;
 }
+
