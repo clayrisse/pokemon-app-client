@@ -1,0 +1,17 @@
+<div class="flexcolum">
+    <div class="flexcenter">
+        <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png" alt="trainer">
+    </div>
+    
+    <div class="flexrow margin">
+        <input type="text" placeholder="Please, introduce your name" name="name" [(ngModel)]="username">
+        <input type="date" name="birth" [(ngModel)]="birth">
+    </div>
+    <div class="flexrow">
+        <input type="text" placeholder="Please, introduce your hobby" name="hobby" [(ngModel)]="hobby">
+        <input type="file" name="upPhoto" accept="image/png, .jpeg, .jpg, image/gif" [(ngModel)]="picture">
+    </div>
+    <div class="flexcenter">
+        <button>CREATE TRAINER</button>
+    </div>
+</div>
