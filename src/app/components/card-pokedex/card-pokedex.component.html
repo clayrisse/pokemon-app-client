@@ -1,1 +1,16 @@
-<p>card-pokedex works!</p>
+<div class="card">
+    
+    
+    <p>image</p>
+     <h3 (click) = "showDetails()"> NAME {{pokedex.name}}</h3>
+
+    <div *ngIf="isShown">
+         <p> hp: {{pokedex.hp}}</p>
+         <p> attack: {{pokedex.attack}}</p>
+         <p> defence: {{pokedex.defence}}</p>
+         <p> spAttack: {{pokedex.spAttack}}</p>
+         <p> spDefence: {{pokedex.spDefence}}</p>
+         <p> speed: {{pokedex.speed}}</p>
+</div>
+
+
