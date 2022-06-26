@@ -11,11 +11,10 @@
 }
 
 button{
-    width: 10%;
+    width: 12%;
     height: 40px;
     font-weight: bold;
     text-decoration: none;
-    padding: 10px;
     margin-left: 20px;
     font-size: 10px;
     color: #0016b0;
@@ -23,25 +22,30 @@ button{
     border-radius: 6px;
     border: 4px solid #0016b0;
     transition: all 0.9s ease;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
 }
 button:hover{
     background-color: #CC0000;
 }
-input{
+.desp{
     color: #0016b0;
     background-color: #FFCB05;
     border: 4px solid #0016b0;
     border-radius: 6px;
     font-size: 10px;
     width: 60%;
-    height: 30px;
+    height: 40px;
     font-weight: bold;
     padding-left: 10px;
 }
+option:hover { color:#0016b0;; background-color:#FFCB05; }
 .flex{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 80px;
 }
 .flexrow{
     display: flex;
@@ -52,4 +56,9 @@ input{
     display: flex;
     justify-content: center;
 }
-
+.lupa{
+    width: 15%;
+    margin-right: 4px;
+    margin-top: 3px;
+  
+}
