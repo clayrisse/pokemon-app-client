@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url(https://i.pinimg.com/originals/90/3c/e8/903ce82d065d12a760eeafe2aec9935a.jpg); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.55;
+  
+}
+*{
+    font-family: Roboto;
+}

@@ -1,0 +1,40 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.width{
+    width: 100%;
+}
+button{
+    width: 100%;
+    height: 7em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    padding-top: 15px;
+    font-size: 15px;
+    color: #0016b0;
+    background-color: #FFCB05;
+    border-radius: 6px;
+    border: 4px solid #0016b0;
+    transition: all 0.9s ease;
+}
+button:hover{
+    background-color: #CC0000;
+}
+.border{
+    border-right: 2px;
+}
+.img{
+    width: 10%;
+    margin-bottom: 6px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.principal{
+    width: 30%;
+}
