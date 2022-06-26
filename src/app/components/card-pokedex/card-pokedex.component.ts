@@ -20,7 +20,7 @@ export class CardPokedexComponent implements OnInit {
   isShown : boolean
 
   constructor() { 
-    this.pokedex = new Pokedex(0, '', 0, 0, 0, 0, 0, 0);
+    this.pokedex = new Pokedex(0, '', '',0, 0, 0, 0, 0, 0);
     this.index = 0;
     this.isShown = false; 
   }
