@@ -24,12 +24,12 @@ export class TeamsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPokeNameList();
+    this.getPokeNameBigList();
   }
 
   
 
-  getPokeNameList() {
+  getPokeNameBigList() {
     this.teamsService.getAllPokeObj().subscribe(
       response => {
       for (const poke of response.results) {
@@ -40,9 +40,11 @@ export class TeamsComponent implements OnInit {
   }
   
   searchPoke(searchName: string) {
-
+    console.log('searchName', searchName)
     this.teamsService.getPokeObj(searchName).subscribe(
       response => {
+        console.log('response-----', response)
+
       const { id, name, base_experience, weight, height, held_items } = response;
 
       const hp  = response.stats[0].base_stat;
@@ -53,9 +55,20 @@ export class TeamsComponent implements OnInit {
       const speed  = response.stats[5].base_stat;
       const image  = response.sprites.other.dream_world.front_default;
       
-      return new Pokemon( id, name, image, hp, attack, defence, spAttack, 
+      const poke = new Pokemon( id, name, image, hp, attack, defence, spAttack, 
         spDefence, speed,  base_experience, weight, height, held_items.length)
-    })
+        console.log('poke---Obj', this.pokeObj)
+        
+        this.addPokeToTrainer(1, poke);
+      })
+      console.log('poke---222222Obj', this.pokeObj)
+  }
+
+  addPokeToTrainer(trainerId: number, pokemon: Pokemon) {
+    this.teamsService.postPokeToTraiter(trainerId, pokemon).subscribe(
+      response => {
+        console.log('taaaadaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+      })
   }
 
 }

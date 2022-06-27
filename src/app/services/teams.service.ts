@@ -2,20 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { Pokemon } from 'src/app/models/pokemon';
+import { Trainer } from 'src/app/models/trainer';
+
 @Injectable({
   providedIn: 'root'
 })
 export class TeamsService {
-  private readonly baseUrl = 'https://pokeapi.co/api/v2/pokemon'
+  private readonly pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon'
+  private readonly girlsBaseUrl = 'http://localhost:8080/api/trainer/';
 
   constructor(private http: HttpClient) { }
 
   getAllPokeObj(): Observable<AllPokeObj> {
-    return this.http.get<AllPokeObj>(this.baseUrl + "?limit=100000&offset=0");
+    return this.http.get<AllPokeObj>(this.pokeApiUrl + "?limit=100000&offset=0");
   }
 
   getPokeObj(pokename:string): Observable<PokeObj>{
-    return this.http.get<PokeObj>(this.baseUrl + "/" + pokename);
+    return this.http.get<PokeObj>(this.pokeApiUrl + "/" + pokename);
+  }
+
+  postPokeToTraiter(trainerId: number, pokeData: Pokemon): Observable<Trainer>{
+    return this.http.post<Trainer>(`${this.girlsBaseUrl}${trainerId}/poke/add`, pokeData)
   }
 }
 

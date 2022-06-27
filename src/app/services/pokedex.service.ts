@@ -13,8 +13,8 @@ export class PokedexService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPokeObj(): Observable<AllPokeObj> {
-    return this.http.get<AllPokeObj>(this.baseUrl );
+  getAllPokeObj(url: string): Observable<AllPokeObj> {
+    return this.http.get<AllPokeObj>(url);
   }
 
   getPokeObj(pokename:string): Observable<PokeObj>{
