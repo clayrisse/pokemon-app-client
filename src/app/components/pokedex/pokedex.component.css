@@ -62,3 +62,18 @@ option:hover { color:#0016b0;; background-color:#FFCB05; }
     margin-top: 3px;
   
 }
+
+.poke-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top:40px; 
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.card-wrapper{
+    
+}

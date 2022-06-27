@@ -1,8 +1,8 @@
 <div class="card">
     <div class="card-title">
-        <div (click)= "showDetails()">{{pokedex.name}}</div>
-        <img height="50px" src={{pokedex.image}} alt="">
-    </div>
+        <img class="image-card" height="50px" src={{pokedex.image}} alt="">
+        <div class="poke-name" (click)= "showDetails()">{{pokedex.name}}</div>
+        </div>
         
     
     <div class="poke-details" *ngIf="isShown">
