@@ -51,7 +51,19 @@ export class PokedexComponent implements OnInit {
     for (const poke of response.results) {
       console.log('typeof poke :>> ', typeof poke);
       console.log('poke :>> ', poke);
-     // this.pokeList1.push(poke.name);
+
+      //const id: number = poke.id;
+       // const name: string = poke.name;
+      //   const hp :number = poke.hp;
+      //   const attack: number = poke.attack;
+      //   const defence: number= poke.defence;
+      //   const spAttack: number = poke.spAttack;
+      //   const spDefence: number= poke.spDefence;
+      //   const speed : number = poke.speed;
+        
+       // const poke1: Pokedex = new Pokedex(0, poke.name, 1, 1, 1, 1, 1, 1);
+       
+     this.pokeList1.push();
     }
   })
 }
