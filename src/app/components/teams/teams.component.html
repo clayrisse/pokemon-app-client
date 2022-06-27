@@ -10,7 +10,9 @@
             <option value="peperoni">Peperoni</option>
             <option value="jamon">Jamon</option>
           </select>
-          <select class="desp2" name="pokemons">
+          <input type="text" class="desp2 searchbar" [(ngModel)]="searchName">
+          <p>{{searchName}}</p>
+          <!-- <select class="desp2" name="pokemons">
             <option hidden selected>Type the name of a Pokemon</option>
             <option value="aceituna">Aceitunas</option>
             <option value="tomate">Tomate</option>
@@ -18,8 +20,27 @@
             <option value="salchica">Salchicha</option>
             <option value="peperoni">Peperoni</option>
             <option value="jamon">Jamon</option>
-          </select>
+          </select> -->
+          <button (click)="searchPoke(searchName)">search POKEMON</button>
           <button>ADD POKEMON</button>
     </div>
+
+    <section class="box">
+      <div>
+       <div>
+        
+       </div>
+
+          <!-- <div *ngFor="let poke of pokeObjList; let i = index">
+          <div>{{poke.name}}</div>
+          <img height="50px" src={{poke.image}} alt="">
+          
+              <app-card-pokedex [pokedex]="pokeObjList"  [index]="i" >
+                  
+              </app-card-pokedex>
+          </div>  -->
+      </div>
+  
+  </section>
     
 </div>
