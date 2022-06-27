@@ -11,10 +11,10 @@ export class Pokemon {
       private _spDefence : number=0, 
       private _speed : number=0,
             
-      private _base_experience: number = 0, 
+      private _experience: number = 0, 
       private _weight: number = 0, 
       private _height: number = 0,
-      private _held_items: number = 0
+      private _items: number = 0
       ) {
   }
 
@@ -48,8 +48,8 @@ export class Pokemon {
   public set speed (value: number) { this._speed = value; }
 
 
-  public get base_experience(): number { return this._base_experience; }
-  public set base_experience (value: number) { this._base_experience = value; }
+  public get experience(): number { return this._experience; }
+  public set experience (value: number) { this._experience = value; }
 
   public get weight(): number { return this._weight; }
   public set weight (value: number) { this._weight = value; }
@@ -57,8 +57,8 @@ export class Pokemon {
   public get height(): number { return this._height; }
   public set height (value: number) { this._height = value; }
 
-  public get held_items(): number { return this._held_items; }
-  public set held_items (value: number) { this._held_items = value; }
+  public get items(): number { return this._items; }
+  public set items (value: number) { this._items = value; }
 
 }
 
