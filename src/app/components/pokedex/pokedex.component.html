@@ -16,7 +16,7 @@
     </div>
     
 
-      <section class="box">
+    <section class="box">
         <div>
          <div>
           
@@ -25,11 +25,11 @@
             <div *ngFor="let poke of pokeObjList; let i = index">
             <div>{{poke.name}}</div>
             <img height="50px" src={{poke.image}} alt="">
-            
-                <!-- <app-card-pokedex [pokedex]="pokeObjList"  [index]="i" >
-                    
-                </app-card-pokedex>-->
+            <!-- <app-card-pokedex [pokedex]="pokeObjList"  [index]="i" >
+                
+            </app-card-pokedex>-->
             </div> 
+            <button (click)="getNext()">get next</button>
         </div>
     
     </section>

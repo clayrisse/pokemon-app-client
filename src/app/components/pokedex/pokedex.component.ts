@@ -34,8 +34,7 @@ export class PokedexComponent implements OnInit {
   getPokeObj(name: string) {
     this.pokedexService.getPokeObj(name).subscribe(
       response => {
-      const id = response.id;
-      const name = response.name;
+      const { id, name } = response;
       const hp  = response.stats[0].base_stat;
       const attack = response.stats[1].base_stat;
       const defence= response.stats[2].base_stat;
@@ -45,6 +44,21 @@ export class PokedexComponent implements OnInit {
       const image  = response.sprites.other.dream_world.front_default;
       const pokedex = new Pokedex( id, name, image, hp, attack, defence, spAttack, spDefence, speed)
       this.pokeObjList.push(pokedex)
+    })
+  }
+
+  getNext() {
+    this.pokedexService.getAllPokeObj().subscribe(
+      response => {
+
+          this.pokeObjList = []
+
+          this.pokedexService.getNextPokeObj(response.next).subscribe(
+            response => {
+              for (const poke of response.results) {
+                this.getPokeObj(poke.name);
+              }
+            })
     })
   }
 
