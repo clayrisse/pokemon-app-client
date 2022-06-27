@@ -24,6 +24,10 @@ export class PokedexService {
   getNextPokeObj(route: string) {
     return this.http.get<AllPokeObj>(route);
   }
+
+  getPreviousPokeObj(route: string) {
+    return this.http.get<AllPokeObj>(route);
+  }
 }
 
 
