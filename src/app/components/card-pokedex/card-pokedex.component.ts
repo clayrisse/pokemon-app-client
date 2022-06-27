@@ -11,10 +11,12 @@ export class CardPokedexComponent implements OnInit {
   @Input() 
   pokedex: Pokedex;
 
+  
   @Input()
   index: number;
 
-  // @Output()
+  // @Output() 
+
   // employeeDeleted = new EventEmitter<number>();
 
   isShown : boolean
@@ -23,6 +25,7 @@ export class CardPokedexComponent implements OnInit {
     this.pokedex = new Pokedex(0, '', '',0, 0, 0, 0, 0, 0);
     this.index = 0;
     this.isShown = false; 
+  
   }
 
   ngOnInit(): void {
