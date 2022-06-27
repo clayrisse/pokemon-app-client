@@ -12,19 +12,28 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 export class PokedexComponent implements OnInit {
 
   pokeObjList: Pokedex[];
+  currentUrl: string;
+  next: string
+  previous: string
 
 
   constructor(private pokedexService: PokedexService) { 
     this.pokeObjList = [];
+    this.currentUrl = 'https://pokeapi.co/api/v2/pokemon'
+    this.next = '' 
+    this.previous = '' 
   }
 
   ngOnInit(): void {
-    this.getPokeNameList();
+    this.getPokeNameList(this.currentUrl);
   }
 
-  getPokeNameList() {
-    this.pokedexService.getAllPokeObj().subscribe(
+  getPokeNameList(url: string) {
+    this.pokeObjList = []
+    this.pokedexService.getAllPokeObj(url).subscribe(
       response => {
+      this.next=response.next
+      this.previous=response.previous
       for (const poke of response.results) {
          this.getPokeObj(poke.name);
       }
@@ -48,18 +57,8 @@ export class PokedexComponent implements OnInit {
   }
 
   getNext() {
-    this.pokedexService.getAllPokeObj().subscribe(
-      response => {
-
-          this.pokeObjList = []
-
-          this.pokedexService.getNextPokeObj(response.next).subscribe(
-            response => {
-              for (const poke of response.results) {
-                this.getPokeObj(poke.name);
-              }
-            })
-    })
+    this.pokeObjList = []
+    this.getPokeNameList(this.next);
   }
 
   
