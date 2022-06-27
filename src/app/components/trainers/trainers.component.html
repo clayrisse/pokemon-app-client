@@ -4,10 +4,10 @@
         <button *ngIf="option == false" (click)="addTrainerCardShow()">ADD NEW TRAINER</button>
         <button *ngIf="option == true" (click)="addTrainerCardHide()">ADD NEW TRAINER</button>
     </div>
-    <div *ngIf="option == true"><app-add-trainer></app-add-trainer></div>
+    <div *ngIf="option == true"><app-add-trainer (addTrainerEvento)="addTrainers($event)"></app-add-trainer></div>
 </div>
-<div>
-    <div *ngFor="let x of trainersList; let i = index">
-        <app-card-trainer [trainer]= "x" [index]="i"></app-card-trainer>
+<div class="container">
+    <div class="card"  *ngFor="let x of trainersList; let i = index">
+        <app-card-trainer [trainer]= "x" [index]="i" (trainerDeletedEvento)="deleteTrainerPadre($event)"></app-card-trainer>
     </div>
 </div>

@@ -30,7 +30,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 .flexrow{
     display: flex;

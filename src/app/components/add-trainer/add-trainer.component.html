@@ -4,14 +4,14 @@
     </div>
     
     <div class="flexrow margin">
-        <input type="text" placeholder="Please, introduce your name" name="name" [(ngModel)]="username">
-        <input type="date" name="birth" [(ngModel)]="birth">
+        <input type="text" placeholder="Please, introduce your name" name="name" [(ngModel)]="username" required="Please">
+        <input type="date" name="birth" [(ngModel)]="birth" required="">
     </div>
     <div class="flexrow">
-        <input type="text" placeholder="Please, introduce your hobby" name="hobby" [(ngModel)]="hobby">
+        <input type="text" placeholder="Please, introduce your hobby" name="hobby" [(ngModel)]="hobby" required="" maxlength="100">
         <input type="file" name="upPhoto" accept="image/png, .jpeg, .jpg, image/gif" [(ngModel)]="picture">
     </div>
     <div class="flexcenter">
-        <button>CREATE TRAINER</button>
+        <button (click)="addTrainers()">CREATE TRAINER</button>
     </div>
 </div>

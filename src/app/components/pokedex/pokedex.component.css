@@ -45,7 +45,7 @@ option:hover { color:#0016b0;; background-color:#FFCB05; }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 .flexrow{
     display: flex;

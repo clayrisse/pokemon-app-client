@@ -29,7 +29,8 @@ import { AddTrainerComponent } from './components/add-trainer/add-trainer.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
