@@ -27,15 +27,12 @@ export class TeamsComponent implements OnInit {
     this.getPokeNameBigList();
   }
 
-  
-
   getPokeNameBigList() {
     this.teamsService.getAllPokeObj().subscribe(
       response => {
       for (const poke of response.results) {
          this.pokeNameList.push(poke.name);
       }
-      console.log('this.pokeNameList', this.pokeNameList)
     })
   }
   
@@ -44,28 +41,48 @@ export class TeamsComponent implements OnInit {
     this.teamsService.getPokeObj(searchName).subscribe(
       response => {
         console.log('response-----', response)
-
-      const { id, name, base_experience, weight, height, held_items } = response;
-
-      const hp  = response.stats[0].base_stat;
-      const attack = response.stats[1].base_stat;
-      const defence= response.stats[2].base_stat;
-      const spAttack = response.stats[3].base_stat;
-      const spDefence= response.stats[4].base_stat;
-      const speed  = response.stats[5].base_stat;
-      const image  = response.sprites.other.dream_world.front_default;
+        const { id, name, weight, height, held_items } = response;
+  
+        const experience  = response.base_experience;
+        const hp  = response.stats[0].base_stat;
+        const attack = response.stats[1].base_stat;
+        const defence= response.stats[2].base_stat;
+        const spAttack = response.stats[3].base_stat;
+        const spDefence= response.stats[4].base_stat;
+        const speed  = response.stats[5].base_stat;
+        const image  = response.sprites.other.dream_world.front_default;
       
-      const poke = new Pokemon( id, name, image, hp, attack, defence, spAttack, 
-        spDefence, speed,  base_experience, weight, height, held_items.length)
+      this.pokeObj = new Pokemon( id, name, image, hp, attack, defence, spAttack, 
+        spDefence, speed, experience, weight, height, held_items.length)
         console.log('poke---Obj', this.pokeObj)
+        console.log('poke******', this.pokeObj)
+      
+      const pokeDto = {
+          id: response.id, 
+          name: response.name,
+          weight: response.weight,
+          height: response.height, 
+          items: 1, 
+          // items: response.held_items.length, 
+          experience: response.base_experience,
+          hp: response.stats[0].base_stat,
+          attack: response.stats[1].base_stat,
+          defence: response.stats[2].base_stat,
+          spAttack: response.stats[3].base_stat,
+          spDefence: response.stats[4].base_stat,
+          speed: response.stats[5].base_stat,
+          image: response.sprites.other.dream_world.front_default
+        }
         
-        this.addPokeToTrainer(1, poke);
+          this.addPokeToTrainer(1, pokeDto);
+
       })
       console.log('poke---222222Obj', this.pokeObj)
   }
 
-  addPokeToTrainer(trainerId: number, pokemon: Pokemon) {
-    this.teamsService.postPokeToTraiter(trainerId, pokemon).subscribe(
+  addPokeToTrainer(trainerId: number, pokeDto: Object) {
+    console.log('entreeeeeee')
+    this.teamsService.postPokeToTraiter(trainerId, pokeDto).subscribe(
       response => {
         console.log('taaaadaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
       })

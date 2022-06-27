@@ -22,8 +22,9 @@ export class TeamsService {
     return this.http.get<PokeObj>(this.pokeApiUrl + "/" + pokename);
   }
 
-  postPokeToTraiter(trainerId: number, pokeData: Pokemon): Observable<Trainer>{
-    return this.http.post<Trainer>(`${this.girlsBaseUrl}${trainerId}/poke/add`, pokeData)
+  postPokeToTraiter(trainerId: number, pokeDto: Object): Observable<Trainer>{
+    console.log('entreeee--------2')
+    return this.http.post<Trainer>(`${this.girlsBaseUrl}${trainerId}/poke/add`, pokeDto)
   }
 }
 
