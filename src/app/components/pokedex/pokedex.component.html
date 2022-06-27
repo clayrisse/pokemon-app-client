@@ -22,9 +22,10 @@
           
          </div>
 
-            <div *ngFor="let pokeCard of pokeObjList; let i = index">
-            <!-- <div>{{pokeCard.name}}</div>
-             -->
+            <div *ngFor="let poke of pokeObjList; let i = index">
+            <div>{{poke.name}}</div>
+            <img height="50px" src={{poke.image}} alt="">
+            
                 <!-- <app-card-pokedex [pokedex]="pokeObjList"  [index]="i" >
                     
                 </app-card-pokedex>-->

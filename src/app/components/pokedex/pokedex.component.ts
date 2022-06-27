@@ -8,87 +8,45 @@ import { PokedexService } from 'src/app/services/pokedex.service';
   templateUrl: './pokedex.component.html',
   styleUrls: ['./pokedex.component.css']
 })
+
 export class PokedexComponent implements OnInit {
 
-  name: string;
-  hp: number;
-  attack: number;
-  defence: number; 
-  spAttack: number;
-  spDefence: number;
-  speed: number;
-  
-  pokeList1:[];
-  pokeObjList: [];
+  pokeObjList: Pokedex[];
 
 
   constructor(private pokedexService: PokedexService) { 
-    
-    this.name = '';
-    this.hp = 0;
-    this.attack = 0;
-    this.defence = 0;
-    this.spAttack = 0;
-    this.spDefence = 0;
-    this.speed = 0; 
-
-    this.pokeList1 = [];
     this.pokeObjList = [];
-    
   }
 
   ngOnInit(): void {
-    this.addPokedex();
-
+    this.getPokeNameList();
   }
 
-  addPokedex() {
+  getPokeNameList() {
     this.pokedexService.getAllPokeObj().subscribe(
       response => {
+      for (const poke of response.results) {
+         this.getPokeObj(poke.name);
+      }
+    })
+  }
+  
+  getPokeObj(name: string) {
+    this.pokedexService.getPokeObj(name).subscribe(
+      response => {
+      const id = response.id;
+      const name = response.name;
+      const hp  = response.stats[0].base_stat;
+      const attack = response.stats[1].base_stat;
+      const defence= response.stats[2].base_stat;
+      const spAttack = response.stats[3].base_stat;
+      const spDefence= response.stats[4].base_stat;
+      const speed  = response.stats[5].base_stat;
+      const image  = response.sprites.other.dream_world.front_default;
+      const pokedex = new Pokedex( id, name, image, hp, attack, defence, spAttack, spDefence, speed)
+      this.pokeObjList.push(pokedex)
+    })
+  }
 
-    console.log("response", response);
-    
-    for (const poke of response.results) {
-      console.log('typeof poke :>> ', typeof poke);
-      console.log('poke :>> ', poke);
-
-      //const id: number = poke.id;
-       // const name: string = poke.name;
-      //   const hp :number = poke.hp;
-      //   const attack: number = poke.attack;
-      //   const defence: number= poke.defence;
-      //   const spAttack: number = poke.spAttack;
-      //   const spDefence: number= poke.spDefence;
-      //   const speed : number = poke.speed;
-        
-       // const poke1: Pokedex = new Pokedex(0, poke.name, 1, 1, 1, 1, 1, 1);
-       
-     this.pokeList1.push();
-    }
-  })
+  
 }
-
-
-// this.pokedexService.getPokeObj(poke.name).subscribe(
-//   response => {
-//     console.log('response :>> ', response);
-//     // this.pokeObjList.push(response)
-//   })
-// }
-}
-
-
-//   const id: number = poke.id;
-    //   const name: string = poke.name;
-    //   const hp :number = poke.hp;
-    //   const attack: number = poke.attack;
-    //   const defence: number= poke.defence;
-    //   const spAttack: number = poke.spAttack;
-    //   const spDefence: number= poke.spDefence;
-    //   const speed : number = poke.speed;
-      
-    //   const pokedex: Pokedex = new Pokedex(id, name, hp, attack, defence, spAttack, spDefence, speed);
-     
-    //     this.pokeObj.push(po
-      
-    // }

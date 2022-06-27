@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PokedexService {
 
   private readonly baseUrl = 'https://pokeapi.co/api/v2/pokemon'
@@ -35,25 +36,21 @@ export interface PokeObj{
   name: string 
   id: number
   stats: [
-    { 
-      base_stat: number
-      stat: {
-        name: string
+    { base_stat: number }, 
+    { base_stat: number }, 
+    { base_stat: number }, 
+    { base_stat: number }, 
+    { base_stat: number }, 
+    { base_stat: number }    
+  ]
+  sprites: {
+    front_default: string
+    other: {
+      dream_world: {
+        front_default: string
       }
     }
-  ]
-  sprite: [
-    {
-      front_default: string
-      other: {
-        dream_world: {
-          front_default: string
-        }
-      }
-    }
-  ]
-
-
+  }
 }
 
 
