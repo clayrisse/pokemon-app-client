@@ -12,19 +12,19 @@ export class CardTrainerComponent implements OnInit {
   trainer: Trainer;
   @Input()
   index: number;
- // @Output()
-  //trainerDeletedEvento = new EventEmitter<number>();
+  @Output()
+  trainerDeletedEvento = new EventEmitter<number>();
 
   constructor() { 
-    this.trainer = new Trainer("", new Date(), "", "");
+    this.trainer = new Trainer("", "", "", "");
     this.index = 0;
   }
 
   ngOnInit(): void {
   }
   
-  /*deleteHijo() {
+  deleteHijo() {
     this.trainerDeletedEvento.emit(this.index);
-  }*/
+  }
 
 }

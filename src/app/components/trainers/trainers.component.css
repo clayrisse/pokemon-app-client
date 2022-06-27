@@ -41,7 +41,7 @@ input{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 .flexrow{
     display: flex;
@@ -51,4 +51,16 @@ input{
     display: flex;
     justify-content: center;
 }
-
+.container{
+    background-color: #0016b0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.card{
+    
+    margin-right: 20px;
+    margin-left: 20px;
+  
+}

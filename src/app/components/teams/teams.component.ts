@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Trainer } from 'src/app/models/trainer';
 
 @Component({
   selector: 'app-teams',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teams.component.css']
 })
 export class TeamsComponent implements OnInit {
-
+@Input()
+trainersList: Trainer[] = [];
   constructor() { }
 
   ngOnInit(): void {

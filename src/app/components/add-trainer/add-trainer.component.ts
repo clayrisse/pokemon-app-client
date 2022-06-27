@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Trainer } from 'src/app/models/trainer';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,13 +9,15 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class AddTrainerComponent implements OnInit {
   username: string;
-  birth: Date;
+  birth: string;
   picture: string;
   hobby: string;
+  @Output()
+  addTrainerEvento = new EventEmitter<Trainer>();
 
   constructor(private userService: UserService) { 
   this.username = "";
-  this.birth = new Date();
+  this.birth = "";
   this.picture = "";
   this.hobby = "";
   }
@@ -25,15 +27,12 @@ export class AddTrainerComponent implements OnInit {
   }
 
   addTrainers() {
-    let trainer: Trainer = new Trainer(this.username, this.birth, this.picture, this.hobby);
-    this.userService.addTrainer(trainer).subscribe();
+   this.addTrainerEvento.emit(new Trainer(this.username, this.birth, this.picture, this.hobby));
   }
-
-  /*deleteTrainerPadre(index: number) {
-    let trainer : Trainer = this.trainersList.splice(index, 1)[0];
-      this.userService.removeTrainerService(trainer.id).subscribe();
-}*/
+    
+  
 
  
+
 
 }

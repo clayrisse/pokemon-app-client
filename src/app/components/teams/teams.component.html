@@ -1,7 +1,7 @@
 <div class="flex">
-   
+  <div class="flexcenter"><p class="title">T E A M S</p></div> 
     <div class="flexrow">
-        <select class="desp1"name="trainers">
+        <select class="desp1"name="trainers" *ngFor="let item of trainersList">
             <option hidden selected>Select a Trainer</option>
             <option value="aceituna">Aceitunas</option>
             <option value="tomate">Tomate</option>
