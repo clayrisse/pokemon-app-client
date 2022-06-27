@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 .width{
     width: 100%;
@@ -37,4 +38,5 @@ button:hover{
 }
 .principal{
     width: 30%;
+    margin-top: 20px;
 }

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Trainer } from 'src/app/models/trainer';
+import { UserService } from 'src/app/services/user.service';
+
+import 'sweetalert2/src/sweetalert2.scss'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-trainers',
@@ -8,22 +12,79 @@ import { Trainer } from 'src/app/models/trainer';
 })
 export class TrainersComponent implements OnInit {
   option: boolean;
-  trainersList: Trainer[] | undefined;
+  trainersList: Trainer[] = [];
  
-  constructor() {
+ 
+  constructor(private userService: UserService) {
     this.option = false;
    }
 
    ngOnInit(): void {
-    this.trainersList = [
-      new Trainer("Juan", new Date(), "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.gstatic.com%2Fimages%2Fbranding%2Fproduct%2F1x%2Fgoogleg_lodged_dark.png&imgrefurl=https%3A%2F%2Fwww.google.com%2F&tbnid=_Xj-5JZqx-zQVM&vet=12ahUKEwjIw6Hq8LXrAhXDxZQKHX_oD_8QMygBegUIARDsQ..iact&docid=_Xj-5JZqx-zQVM&w=400&h=400&q=google%20logo&ved=0ahUKEwjIw6Hq8LXrAhXDxZQKHX_oD_8QMygBegUIARDsQ", "Hola soy Juan"),
-      new Trainer("Pedro", new Date(), "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.gstatic.com%2Fimages%2Fbranding%2Fproduct%2F1x%2Fgoogleg_lodged_dark.png&imgrefurl=https%3A%2F%2Fwww.google.com%2F&tbnid=_Xj-5JZqx-zQVM&vet=12ahUKEwjIw6Hq8LXrAhXDxZQKHX_oD_8QMygBegUIARDsQ..iact&docid=_Xj-5JZqx-zQVM&w=400&h=400&q=google%20logo&ved=0ahUKEwjIw6Hq8LXrAhXDxZQKHX_oD_8QMygBegUIARDsQ", "Hola soy Pedro"),
+ this.trainersList = [];
+  this.userService.getUsers().subscribe(
+    response =>{
+      response.forEach((user) => {
+      const username: string = user.username;
+      const birth: string = user.birth;
+      const picture: string = user.picture;
+      const hobby: string = user.hobby;
 
-  ]}
+      const trainer: Trainer = new Trainer(username, birth, picture, hobby);
+     this.trainersList.push(trainer)
+    });
+  });
+
+}
+   deleteTrainerPadre(index: number) {
+    let trainer : Trainer = this.trainersList.splice(index, 1)[0];
+      this.userService.removeTrainerService(trainer.username).subscribe((response) =>
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your trainer has been removed',
+        showConfirmButton: false,
+        timer: 1500,
+        color: '#0016b0',
+        iconColor: '#0016b0',
+        background: '#FFCB05'
+        
+      }));
+    }
+
+    addTrainers(trainer: Trainer) {
+      this.trainersList.forEach(element => {
+        if(element.username == trainer.username){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your trainer already exists',
+            showConfirmButton: false,
+            timer: 1500,
+            color: '#0016b0',
+            iconColor: '#0016b0',
+            background: '#FFCB05'
+            
+          });}
+          
+        }); 
+    this.userService.addTrainer(trainer).subscribe((response) => 
+      {this.ngOnInit();});
   
+          Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your trainer has been saved',
+        showConfirmButton: false,
+        timer: 1500,
+        color: '#0016b0',
+        iconColor: '#0016b0',
+        background: '#FFCB05'
+      });
+      
+    }
 
 
-  //methods nifor add trainer card
+  //methods nif add trainer card
   addTrainerCardShow(){
    return (this.option = true);
   }

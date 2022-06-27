@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Pokemon } from 'src/app/models/pokemon';
 import { TeamsService } from 'src/app/services/teams.service';
-
+import { Trainer } from 'src/app/models/trainer';
 
 @Component({
   selector: 'app-teams',
@@ -10,7 +10,14 @@ import { TeamsService } from 'src/app/services/teams.service';
   styleUrls: ['./teams.component.css']
 })
 export class TeamsComponent implements OnInit {
-  
+
+  //-----------------rociooooo
+
+  @Input()
+  trainersList: Trainer[] = [];
+
+  //----------------clauuuuuuuu
+
   searchName: string
   pokeNameList: string[];
   pokeObj: Pokemon;

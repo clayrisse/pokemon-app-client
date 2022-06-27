@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Trainer } from '../models/trainer';
 
 @Injectable({
@@ -19,19 +20,21 @@ export class UserService {
       hobby: trainer.hobby
     }; 
 
-  return this.http.post(this.baseUrl + "add/", data);
+  return this.http.post(this.baseUrl + "api/trainer/add/", data);
   }
-  /*removeTrainerService(id: number) : Observable<void>{
-    return this.http.delete<void>(this.baseUrl + "delete/" + id)
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl + "api/trainer/all");
+  }
+  removeTrainerService(username: string) : Observable<void>{
+    return this.http.delete<void>(this.baseUrl + "api/trainer/delete_by_username/" + username)
     
-  }*/
+  }
   
 }
 export interface User {
   
-  "id": number,
   "username": string,
-  "birth": Date,
+  "birth": string,
   "picture": string,
   "hobby": string
 

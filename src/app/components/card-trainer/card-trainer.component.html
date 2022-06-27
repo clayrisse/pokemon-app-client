@@ -1,8 +1,12 @@
-<div>
-    <h4>{{trainer.username}}</h4>
-    <p>{{trainer.birth}}</p>
-    <p>{{trainer.picture}}</p>
-    <p>{{trainer.hobby}}</p>
-
-    <button>Delete</button>
+<div class="container">
+    <div class="flexcol">
+       <img src="{{trainer.picture}}" alt="photoperfil">
+       <h4>{{trainer.username}}</h4> 
+    </div>
+    <div class="margin">
+       <p><span>Age:  </span>{{trainer.getAge()}}</p>
+        <p><span>Hobby:  </span>{{trainer.hobby}}</p> 
+        </div>
+       <button (click)="deleteHijo()">Delete</button> 
+    
 </div>
