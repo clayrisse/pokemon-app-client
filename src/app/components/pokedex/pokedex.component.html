@@ -21,19 +21,20 @@
          <div>
           
          </div>
-
-            <div *ngFor="let poke of pokeObjList; let i = index">
+<div class ="poke-cards">
+            <div class="card-wrapper" *ngFor="let poke of pokeObjList; let i = index">
             <!-- <div>{{poke.name}}</div>
             <img height="50px" src={{poke.image}} alt=""> -->
             
                 <app-card-pokedex [pokedex]="poke"  [index]="i" ></app-card-pokedex>
             
-        
+            </div>
             </div> 
-            <button (click)="getNext()">get next</button>
+            <button  *ngIf="next!=null" (click)="getNext()"><img src="https://pngroyale.com/right-arrow-transparent-background-png/" alt="arrow">Next</button>
             <button *ngIf="previous!=null" (click)="getPrevious()">get previous</button>
             
         </div>
+  
     
     </section>
     
