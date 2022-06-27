@@ -12,14 +12,16 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 export class PokedexComponent implements OnInit {
 
   pokeObjList: Pokedex[];
-
+  currentUrl: string; 
 
   constructor(private pokedexService: PokedexService) { 
     this.pokeObjList = [];
+    this.currentUrl = "";
   }
 
   ngOnInit(): void {
     this.getPokeNameList();
+    
   }
 
   getPokeNameList() {
@@ -48,6 +50,7 @@ export class PokedexComponent implements OnInit {
   }
 
   getNext() {
+   
     this.pokedexService.getAllPokeObj().subscribe(
       response => {
 
@@ -60,7 +63,27 @@ export class PokedexComponent implements OnInit {
               }
             })
     })
+  
+}
+
+  getPrevious() {
+    this.pokedexService.getAllPokeObj().subscribe(
+      response => {
+
+          this.pokeObjList = []
+
+          this.pokedexService.getPreviousPokeObj(response.previous).subscribe(
+            response => {
+              for (const poke of response.results) {
+                this.getPokeObj(poke.name);
+              }
+            })
+    })
+
   }
+
+
+
 
   
 }
