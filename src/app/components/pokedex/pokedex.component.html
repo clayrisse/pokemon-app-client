@@ -31,6 +31,8 @@
         
             </div> 
             <button (click)="getNext()">get next</button>
+            <button *ngIf="previous!=null" (click)="getPrevious()">get previous</button>
+            
         </div>
     
     </section>

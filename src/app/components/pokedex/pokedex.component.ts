@@ -60,6 +60,14 @@ export class PokedexComponent implements OnInit {
     this.pokeObjList = []
     this.getPokeNameList(this.next);
   }
+  
+  getPrevious() {
+    this.pokeObjList = []
+    this.getPokeNameList(this.previous);
+  }
+
+
+
 
   
 }
