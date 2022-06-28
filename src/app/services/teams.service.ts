@@ -15,7 +15,7 @@ export class TeamsService {
   constructor(private http: HttpClient) { }
 
   getAllPokeObj(): Observable<AllPokeObj> {
-    return this.http.get<AllPokeObj>(this.pokeApiUrl + "?limit=100000&offset=0");
+    return this.http.get<AllPokeObj>(this.pokeApiUrl + "?limit=10000&offset=0");
   }
 
   getPokeObj(pokename:string): Observable<PokeObj>{

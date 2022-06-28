@@ -14,7 +14,7 @@ export class AddTrainerComponent implements OnInit {
   hobby: string;
   @Output()
   addTrainerEvento = new EventEmitter<Trainer>();
-
+  
   constructor(private userService: UserService) { 
   this.username = "";
   this.birth = "";

@@ -27,10 +27,14 @@ export class UserService {
   }
   removeTrainerService(username: string) : Observable<void>{
     return this.http.delete<void>(this.baseUrl + "api/trainer/delete_by_username/" + username)
-    
+  }
+
+  getUserByUsername(username: string): Observable<User>{
+    return this.http.get<User>(this.baseUrl + "api/trainer/name/" + username)
   }
   
 }
+
 export interface User {
   
   "username": string,

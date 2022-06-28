@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { CardPokedexComponent } from './components/card-pokedex/card-pokedex.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CardTeamComponent } from './components/card-team/card-team.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { CardTrainerComponent } from './components/card-trainer/card-trainer.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
 import { AddTrainerComponent } from './components/add-trainer/add-trainer.component';
 import { TeamCardComponent } from './components/team-card/team-card.component';
+import { TrainerPageComponent } from './components/trainer-page/trainer-page.component';
 
 
 @NgModule({
@@ -21,12 +21,12 @@ import { TeamCardComponent } from './components/team-card/team-card.component';
     PokedexComponent,
     CardPokedexComponent,
     HeaderComponent,
-    CardTeamComponent,
     TeamsComponent,
     CardTrainerComponent,
     TrainersComponent,
     AddTrainerComponent,
     TeamCardComponent,
+    TrainerPageComponent,
   ],
   imports: [
     BrowserModule,
