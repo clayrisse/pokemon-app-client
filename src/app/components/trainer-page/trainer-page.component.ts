@@ -27,7 +27,7 @@ export class TrainerPageComponent implements OnInit {
         console.log('response', response)
         const {username, birth, picture, hobby } = response
   
-        this.trainer = new Trainer(username, birth, picture, hobby);
+        this.trainer = new Trainer(username, new Date(birth), picture, hobby);
       
       });
   }
