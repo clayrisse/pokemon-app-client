@@ -25,7 +25,7 @@ export class TrainersComponent implements OnInit {
     response =>{
       response.forEach((user) => {
       const username: string = user.username;
-      const birth: string = user.birth;
+      const birth: Date = user.birth;
       const picture: string = user.picture;
       const hobby: string = user.hobby;
 
@@ -52,24 +52,12 @@ export class TrainersComponent implements OnInit {
     }
 
     addTrainers(trainer: Trainer) {
-      this.trainersList.forEach(element => {
-        if(element.username == trainer.username){
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Your trainer already exists',
-            showConfirmButton: false,
-            timer: 1500,
-            color: '#0016b0',
-            iconColor: '#0016b0',
-            background: '#FFCB05'
-            
-          });}
-          
-        }); 
-    this.userService.addTrainer(trainer).subscribe((response) => 
+    console.log(trainer.birth);
+    if(this.trainersList.filter((trainer2) => trainer2.username.toLowerCase() === trainer.username.toLowerCase()).length ==0 ){
+      if(trainer.username != "" && trainer.birth.toDateString() != "Invalid Date"){
+this.userService.addTrainer(trainer).subscribe((response) => 
       {this.ngOnInit();});
-  
+
           Swal.fire({
         position: 'center',
         icon: 'success',
@@ -80,10 +68,38 @@ export class TrainersComponent implements OnInit {
         iconColor: '#0016b0',
         background: '#FFCB05'
       });
+
+      }else{
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Write a valid username and birthdate',
+          showConfirmButton: false,
+          timer: 1500,
+          color: '#FFCB05',
+          iconColor: '#FFCB05',
+          background: '#CC0000'
+          
+        });
+      }
+      
+    } else {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Your trainer already exists',
+        showConfirmButton: false,
+        timer: 1500,
+        color: '#FFCB05',
+        iconColor: '#FFCB05',
+        background: '#CC0000'
+        
+      });
+    }
+    
       
     }
-
-
+    
   //methods nif add trainer card
   addTrainerCardShow(){
    return (this.option = true);

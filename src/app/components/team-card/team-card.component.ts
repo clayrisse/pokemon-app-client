@@ -27,7 +27,7 @@ export class TeamCardComponent implements OnInit {
   constructor(private teamCardService: TeamCardService) {
 
     this.pokemonList = [];
-    this.trainer = new Trainer ('', '01/01/1111', '', '');
+    this.trainer = new Trainer ('', new Date, '', '');
     this.isBtnOn = false
     
   }

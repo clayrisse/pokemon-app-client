@@ -38,7 +38,7 @@ export class UserService {
 export interface User {
   
   "username": string,
-  "birth": string,
+  "birth": Date,
   "picture": string,
   "hobby": string
 

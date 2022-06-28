@@ -16,7 +16,7 @@ export class CardTrainerComponent implements OnInit {
   trainerDeletedEvento = new EventEmitter<number>();
 
   constructor() { 
-    this.trainer = new Trainer("", "", "", "");
+    this.trainer = new Trainer("", new Date(), "", "");
     this.index = 0;
   }
 

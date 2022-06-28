@@ -16,7 +16,7 @@ export class TrainerPageComponent implements OnInit {
 
   constructor(private userService: UserService, private route: ActivatedRoute) { 
 
-    this.trainer= new Trainer('','','','');
+    this.trainer= new Trainer('', new Date,'','');
     this.usernameId = this.route.snapshot.params["username"]
   }
 
