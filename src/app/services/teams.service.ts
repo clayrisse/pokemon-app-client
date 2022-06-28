@@ -15,18 +15,23 @@ export class TeamsService {
   constructor(private http: HttpClient) { }
 
   getAllPokeObj(): Observable<AllPokeObj> {
-    return this.http.get<AllPokeObj>(this.pokeApiUrl + "?limit=100000&offset=0");
+    return this.http.get<AllPokeObj>(this.pokeApiUrl + "?limit=10000&offset=0");
   }
 
   getPokeObj(pokename:string): Observable<PokeObj>{
     return this.http.get<PokeObj>(this.pokeApiUrl + "/" + pokename);
   }
 
-  postPokeToTraiter(trainerId: number, pokeDto: Object): Observable<Trainer>{
+  postPokeToTraiter(username: string, pokeDto: Object): Observable<Trainer>{
     console.log('entreeee--------2')
-    return this.http.post<Trainer>(`${this.girlsBaseUrl}${trainerId}/poke/add`, pokeDto)
+    return this.http.post<Trainer>(`${this.girlsBaseUrl}${username}/poke/add`, pokeDto)
+  }
+
+  getTrainerList(): Observable<Trainer[]> {
+    return this.http.get<Trainer[]>(this.girlsBaseUrl + "all")
   }
 }
+
 
 export interface AllPokeObj{
   next: string
@@ -64,6 +69,7 @@ export interface PokeObj{
     }
   }
   weight: number
+
 }
 
 

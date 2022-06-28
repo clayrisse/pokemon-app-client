@@ -7,7 +7,12 @@
     <div *ngIf="option == true"><app-add-trainer (addTrainerEvento)="addTrainers($event)"></app-add-trainer></div>
 </div>
 <div class="container">
+
     <div class="card"  *ngFor="let x of trainersList; let i = index">
         <app-card-trainer [trainer]= "x" [index]="i" (trainerDeletedEvento)="deleteTrainerPadre($event)"></app-card-trainer>
+        
+        <button routerLink="/trainer/{{x.username}}" >Ver tarjeta de:{{x.username}} </button>>
+        
     </div>
+
 </div>
