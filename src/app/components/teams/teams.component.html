@@ -1,14 +1,12 @@
 <div class="flex">
   <div class="flexcenter"><p class="title">T E A M S</p></div> 
     <div class="flexrow">
-        <select class="desp1"name="trainers" *ngFor="let item of trainersList">
+        <select class="desp1"name="trainers" >
             <option hidden selected>Select a Trainer</option>
-            <option value="aceituna">Aceitunas</option>
             <option value="tomate">Tomate</option>
-            <option value="cebolla">Cebolla</option>
-            <option value="salchica">Salchicha</option>
-            <option value="peperoni">Peperoni</option>
-            <option value="jamon">Jamon</option>
+            <option *ngFor="let trainerObj of trainerList">
+              {{trainerObj.username}}
+            </option>
           </select>
           <input type="text" class="desp2 searchbar" [(ngModel)]="searchName">
           <p>{{searchName}}</p>
@@ -27,18 +25,16 @@
 
     <section class="box">
       <div>
-       <div>
+        <div>
         
-       </div>
-            <div>
-           <!-- <div *ngFor="let poke of pokeObjList; let i = index"> -->
-          <div>{{pokeObj.name}}</div>
-          <img height="50px" src={{pokeObj.image}} alt=""> 
+        </div>
+          <div>
+            <h1>{{pokeObj.name}}</h1>
+            <img height="50px" src={{pokeObj.image}} alt=""> 
+
+            <app-team-card *ngFor="let trainerObj of trainerList" [trainer]="trainerObj"></app-team-card>
            
-              <!-- <app-card-pokedex [pokemon]="pokeObj"  [index]="i" >
-                  
-              </app-card-pokedex> -->
-          </div> 
+        </div> 
       </div>
   
   </section>

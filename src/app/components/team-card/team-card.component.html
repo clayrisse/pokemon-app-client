@@ -1,0 +1,8 @@
+<div>{{trainer.username}}</div>
+<div>{{trainer.hobby}}</div>
+<button (click)="showPokemons(trainer.username)" >Show Pokemon</button>
+  <div *ngFor="let poke of pokemonList">
+    <div>{{poke.name}}</div>
+    <img height="50px" src={{poke.image}} alt="">
+    <button (click)="removePoke(trainer.username, poke.name)">Remove</button>
+</div>

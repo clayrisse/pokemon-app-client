@@ -8,7 +8,7 @@ import { Trainer } from '../models/trainer';
 })
 export class UserService {
 
-  private readonly baseUrl = 'http://localhost:8081/';
+  private readonly baseUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 

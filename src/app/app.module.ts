@@ -12,6 +12,8 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { CardTrainerComponent } from './components/card-trainer/card-trainer.component';
 import { TrainersComponent } from './components/trainers/trainers.component';
 import { AddTrainerComponent } from './components/add-trainer/add-trainer.component';
+import { TeamCardComponent } from './components/team-card/team-card.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { AddTrainerComponent } from './components/add-trainer/add-trainer.compon
     TeamsComponent,
     CardTrainerComponent,
     TrainersComponent,
-    AddTrainerComponent
+    AddTrainerComponent,
+    TeamCardComponent,
   ],
   imports: [
     BrowserModule,
