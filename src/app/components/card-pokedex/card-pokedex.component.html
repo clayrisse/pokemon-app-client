@@ -1,7 +1,9 @@
+
 <div class="card">
-    <div class="card-title">
-        <img class="image-card" height="50px" src={{pokedex.image}} alt="">
-        <div class="poke-name" (click)= "showDetails()">{{pokedex.name}}</div>
+
+    <div class="card-title" (click)= "showDetails()">
+        <img class="image-card" height="60px" src={{pokedex.image}} alt="">
+        <div class="poke-name">{{pokedex.name | titlecase}}</div>
         </div>
         
     

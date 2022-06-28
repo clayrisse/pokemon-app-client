@@ -17,25 +17,18 @@
     
 
     <section class="box">
-        <div>
-         <div>
-          
+       
+         
+    <div class ="poke-cards">
+        <div class="card-wrapper" *ngFor="let poke of pokeObjList; let i = index">          
+             <app-card-pokedex [pokedex]="poke"  [index]="i" ></app-card-pokedex>
          </div>
-<div class ="poke-cards">
-            <div class="card-wrapper" *ngFor="let poke of pokeObjList; let i = index">
-            <!-- <div>{{poke.name}}</div>
-            <img height="50px" src={{poke.image}} alt=""> -->
-            
-                <app-card-pokedex [pokedex]="poke"  [index]="i" ></app-card-pokedex>
-            
-            </div>
-            </div> 
-            <button  *ngIf="next!=null" (click)="getNext()"><img src="https://pngroyale.com/right-arrow-transparent-background-png/" alt="arrow">Next</button>
-            <button *ngIf="previous!=null" (click)="getPrevious()">get previous</button>
-            
+    </div> 
+
+        <div class="arrow-button">
+            <button class="one-button  button-arrow-plus" *ngIf="previous!=null" (click)="getPrevious()"> <p><i class="arrow left"></i></p></button> 
+            <button class="one-button  button-arrow-plus" *ngIf="next!=null" (click)="getNext()"><p><i class="arrow right"></i></p></button>
         </div>
-  
-    
     </section>
     
 </div>

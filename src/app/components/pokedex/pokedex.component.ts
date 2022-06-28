@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Pokedex } from 'src/app/models/pokedex';
 import { PokedexService } from 'src/app/services/pokedex.service';
+//import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-pokedex',
