@@ -30,3 +30,24 @@
     flex-direction: column;
    align-items: center;
 }
+.content {
+    animation-duration: 3s;
+    animation-name: animation;
+    animation-iteration-count: 1;
+   
+  }
+  
+  .content-1 {
+    animation-delay: 0.5s; 
+  }
+  @keyframes animation {
+    from {
+      margin-top: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 100%;
+    }
+  }

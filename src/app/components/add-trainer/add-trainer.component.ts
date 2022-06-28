@@ -14,7 +14,7 @@ export class AddTrainerComponent implements OnInit {
   hobby: string;
   @Output()
   addTrainerEvento = new EventEmitter<Trainer>();
-
+  
   constructor(private userService: UserService) { 
   this.username = "";
   this.birth = "";
@@ -27,7 +27,9 @@ export class AddTrainerComponent implements OnInit {
   }
 
   addTrainers() {
-   this.addTrainerEvento.emit(new Trainer(this.username, this.birth, this.picture, this.hobby));
+    console.log("hola"  + new Date(this.birth));
+   this.addTrainerEvento.emit(new Trainer(this.username, new Date(this.birth), this.picture, this.hobby));
+   
   }
     
   

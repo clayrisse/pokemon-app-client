@@ -1,0 +1,21 @@
+<p>trainer-page works!.......................................</p>
+<div class="container">
+  <div class="flexcol">
+     <!-- <img src="" alt="photoperfil">
+     <h4>trainer.username</h4>  -->
+     <img src="{{trainer.picture}}" alt="photoperfil">
+     <h4>{{trainer.username}}</h4> 
+  </div>
+  <div class="margin">
+    <p><span>Age:  </span>{{trainer.getAge()}}</p> 
+      <p><span>Hobby:  </span>{{trainer.hobby}}</p> 
+      </div>
+     <button >Delete</button> 
+     <!-- <button (click)="deleteHijo()">Delete</button>  -->
+
+ 
+     <button routerLink="/trainer/:id">
+    </button>
+
+    
+</div>

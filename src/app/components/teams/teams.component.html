@@ -1,44 +1,41 @@
 <div class="flex">
   <div class="flexcenter"><p class="title">T E A M S</p></div> 
     <div class="flexrow">
-        <select class="desp1"name="trainers" *ngFor="let item of trainersList">
+        <select [(ngModel)]="trainerName" class="desp1"name="trainers" >
             <option hidden selected>Select a Trainer</option>
-            <option value="aceituna">Aceitunas</option>
-            <option value="tomate">Tomate</option>
-            <option value="cebolla">Cebolla</option>
-            <option value="salchica">Salchicha</option>
-            <option value="peperoni">Peperoni</option>
-            <option value="jamon">Jamon</option>
+            <option *ngFor="let trainerObj of trainerList" value="{{trainerObj.username}}">
+              {{trainerObj.username}}
+            </option>
+          </select>
+          <select [(ngModel)]="searchName" class="desp2" name="pokemons" >
+            <option hidden selected>Select Pokemon</option>
+            <option *ngFor="let pokename of pokeNameList" value="{{pokename}}">
+              {{pokename}}
+            </option>
           </select>
           <input type="text" class="desp2 searchbar" [(ngModel)]="searchName">
-          <p>{{searchName}}</p>
-          <!-- <select class="desp2" name="pokemons">
-            <option hidden selected>Type the name of a Pokemon</option>
-            <option value="aceituna">Aceitunas</option>
-            <option value="tomate">Tomate</option>
-            <option value="cebolla">Cebolla</option>
-            <option value="salchica">Salchicha</option>
-            <option value="peperoni">Peperoni</option>
-            <option value="jamon">Jamon</option>
-          </select> -->
-          <button (click)="searchPoke(searchName)">search POKEMON</button>
-          <button>ADD POKEMON</button>
+          <input class="desp" type="desp2 search" name="pokemon" list="pokemonlist" placeholder="Select a Pokemon" [(ngModel)]="searchName">
+          <datalist id="pokemonlist">
+            <option *ngFor="let pokename of pokeNameList" value="{{pokename}}">
+              {{pokename}}
+            </option>
+          </datalist>
+
+          <button (click)="searchAddPoke(trainerName, searchName)">ADD POKEMON</button>
     </div>
 
     <section class="box">
       <div>
-       <div>
+        <div>
         
-       </div>
-            <div>
-           <!-- <div *ngFor="let poke of pokeObjList; let i = index"> -->
-          <div>{{pokeObj.name}}</div>
-          <img height="50px" src={{pokeObj.image}} alt=""> 
+        </div>
+          <div>
+            <!-- <h1>{{pokeObj.name}}</h1>
+            <img height="50px" src={{pokeObj.image}} alt="">  -->
+
+            <app-team-card *ngFor="let trainerObj of trainerList" [jose]="joseCode.asObservable()"    [trainer]="trainerObj"></app-team-card>
            
-              <!-- <app-card-pokedex [pokemon]="pokeObj"  [index]="i" >
-                  
-              </app-card-pokedex> -->
-          </div> 
+        </div> 
       </div>
   
   </section>

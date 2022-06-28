@@ -8,7 +8,7 @@ import { Trainer } from '../models/trainer';
 })
 export class UserService {
 
-  private readonly baseUrl = 'http://localhost:8081/';
+  private readonly baseUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
@@ -27,14 +27,18 @@ export class UserService {
   }
   removeTrainerService(username: string) : Observable<void>{
     return this.http.delete<void>(this.baseUrl + "api/trainer/delete_by_username/" + username)
-    
+  }
+
+  getUserByUsername(username: string): Observable<User>{
+    return this.http.get<User>(this.baseUrl + "api/trainer/name/" + username)
   }
   
 }
+
 export interface User {
   
   "username": string,
-  "birth": string,
+  "birth": Date,
   "picture": string,
   "hobby": string
 
