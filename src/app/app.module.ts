@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { TrainersComponent } from './components/trainers/trainers.component';
 import { AddTrainerComponent } from './components/add-trainer/add-trainer.component';
 import { TeamCardComponent } from './components/team-card/team-card.component';
 import { TrainerPageComponent } from './components/trainer-page/trainer-page.component';
+
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { TrainerPageComponent } from './components/trainer-page/trainer-page.com
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

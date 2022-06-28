@@ -3,17 +3,19 @@
     margin: 1rem; 
     background-color:#0016b0;
     color:#FFCB05;
-    padding: 1rem; 
+    padding: 1.5rem; 
     align-items:center;
     border-radius: 2%;
     flex-direction: row;
 	flex-wrap: wrap;
     font-size: 20px;
     justify-content: center; 
+   
 }
 .card:hover{
     background-color: #FFCB05;
     color:#0016b0;
+    cursor: pointer; 
     
 }
 

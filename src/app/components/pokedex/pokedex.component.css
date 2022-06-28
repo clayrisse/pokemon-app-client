@@ -25,21 +25,31 @@ button{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
+
 }
+
+.button-arrow-plus {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
 button:hover{
     background-color: #CC0000;
 }
+
 .desp{
     color: #0016b0;
     background-color: #FFCB05;
     border: 4px solid #0016b0;
     border-radius: 6px;
-    font-size: 10px;
+    font-size: 15px;
     width: 60%;
     height: 40px;
     font-weight: bold;
     padding-left: 10px;
 }
+
 option:hover { color:#0016b0;; background-color:#FFCB05; }
 .flex{
     display: flex;
@@ -47,20 +57,24 @@ option:hover { color:#0016b0;; background-color:#FFCB05; }
     justify-content: center;
     margin-bottom: 20px;
 }
+
 .flexrow{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 }
+
 .flexcenter{
     display: flex;
     justify-content: center;
 }
+
 .lupa{
     width: 15%;
     margin-right: 4px;
     margin-top: 3px;
-  
+
 }
 
 .poke-cards{
@@ -71,9 +85,43 @@ option:hover { color:#0016b0;; background-color:#FFCB05; }
     margin-top:40px; 
     flex-wrap: wrap;
     align-items: center;
-
 }
 
-.card-wrapper{
-    
-}
+.arrow {
+    border: solid #0016b0;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+     
+  }
+
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+   
+  }
+
+  .arrow-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+  }
+
+  .one-button {
+    align-items: center;
+    align-content: center;
+  }
+
+  .one-button:hover {
+    cursor: pointer;
+  }
+  
+  
+
+
