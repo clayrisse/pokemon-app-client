@@ -7,7 +7,8 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-trainer-page',
   templateUrl: './trainer-page.component.html',
-  styleUrls: ['./trainer-page.component.css']
+  styleUrls: ['./trainer-page.component.css'],
+  host: { 'class' : 'card'}
 })
 export class TrainerPageComponent implements OnInit {
 

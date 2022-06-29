@@ -2,14 +2,16 @@
     <div class="flexcenter"><p class="title">P O K E D E X</p></div> 
    
     <div class="flexrow">
-        <input class="desp" type="search" name="pokemon" list="pokemonlist" placeholder="Select a Pokemon">
+
+         <input class="desp" type="desp2 search" name="pokemon" list="pokemonlist" placeholder="Select a Pokemon" [(ngModel)]="searchName">
         <datalist id="pokemonlist">
-            <option value="aceituna">
-       
+          <option *ngFor="let pokename of pokeNameList" value="{{pokename}}">
+            {{pokename}} 
+          </option>
         </datalist>
         
        
-        <button><img class ="lupa"src="http://assets.stickpng.com/images/59cfc4d2d3b1936210a5ddc7.png" alt="icono"><p>SEARCH POKEMON</p> </button>
+        <button (click)="searchAddPoke(searchName)"><img class ="lupa"src="http://assets.stickpng.com/images/59cfc4d2d3b1936210a5ddc7.png" alt="icono"><p>SEARCH POKEMON</p> </button>
     </div>
     
 

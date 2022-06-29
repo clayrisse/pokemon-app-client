@@ -10,8 +10,16 @@ import { Observable } from 'rxjs';
 export class PokedexService {
 
   private readonly baseUrl = 'https://pokeapi.co/api/v2/pokemon'
+  private readonly pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon'
+  private readonly girlsBaseUrl = 'http://localhost:8080/api/trainer/'
+
 
   constructor(private http: HttpClient) { }
+
+  getAllBigPokeObj(): Observable<AllPokeObj> {
+    return this.http.get<AllPokeObj>(this.pokeApiUrl + "?limit=10000&offset=0");
+  }
+
 
   getAllPokeObj(url: string): Observable<AllPokeObj> {
     return this.http.get<AllPokeObj>(url);

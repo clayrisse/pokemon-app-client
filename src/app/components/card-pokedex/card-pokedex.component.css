@@ -43,7 +43,7 @@
   @keyframes animation {
     from {
       margin-top: 100%;
-      width: 300%
+      width: 300%;
     }
   
     to {
@@ -51,3 +51,13 @@
       width: 100%;
     }
   }
+
+  .poke-details {
+    background-color: #CC0000;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  
