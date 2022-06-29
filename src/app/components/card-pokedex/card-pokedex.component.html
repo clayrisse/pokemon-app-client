@@ -1,7 +1,7 @@
 
 <div class="card">
 
-    <div class="card-title content" (click)= "showDetails()">
+    <div class="card-title  content" (click)= "showDetails()">
         <img class="image-card" height="60px" src={{pokedex.image}} alt="">
         <div class="poke-name">{{pokedex.name | titlecase}}</div>
         </div>
@@ -14,6 +14,8 @@
          <p> Special Attack: {{pokedex.spAttack}}</p>
          <p> Special Defence: {{pokedex.spDefence}}</p>
          <p> Speed: {{pokedex.speed}}</p>
+         
+        <!-- <button  routerLink="pokedex">back To Pokedex</button> -->
 </div>
 
 

@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   selector: 'app-trainer-page',
   templateUrl: './trainer-page.component.html',
   styleUrls: ['./trainer-page.component.css'],
-  host: {'class': 'card'}
+  host: { 'class' : 'card'}
 })
 export class TrainerPageComponent implements OnInit {
 
