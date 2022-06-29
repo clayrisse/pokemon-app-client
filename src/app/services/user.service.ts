@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Pokemon } from '../models/pokemon';
 import { Trainer } from '../models/trainer';
 
 @Injectable({
@@ -32,7 +33,10 @@ export class UserService {
   getUserByUsername(username: string): Observable<User>{
     return this.http.get<User>(this.baseUrl + "api/trainer/name/" + username)
   }
-  
+  getTrainersPokemonList(username: string): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(this.baseUrl + "api/trainer/" + username + "/poke/list")
+    
+  }
 }
 
 export interface User {

@@ -5,6 +5,7 @@ import { UserService } from 'src/app/services/user.service';
 import 'sweetalert2/src/sweetalert2.scss'
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-trainers',
   templateUrl: './trainers.component.html',
@@ -13,9 +14,10 @@ import Swal from 'sweetalert2';
 export class TrainersComponent implements OnInit {
   option: boolean;
   trainersList: Trainer[] = [];
+  
  
  
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,) {
     this.option = false;
    }
 
@@ -96,9 +98,8 @@ this.userService.addTrainer(trainer).subscribe((response) =>
         
       });
     }
-    
-      
     }
+    
     
   //methods nif add trainer card
   addTrainerCardShow(){

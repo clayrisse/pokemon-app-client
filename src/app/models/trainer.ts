@@ -24,4 +24,5 @@ export class Trainer {
     public set picture(value: string) {  this._picture = value; }
     public set hobby(value: string) {  this._hobby = value; }
     
+    
 }

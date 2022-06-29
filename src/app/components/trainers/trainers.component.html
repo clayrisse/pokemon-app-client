@@ -8,9 +8,9 @@
 </div>
 <div class="container">
 
-    <div class="card"  *ngFor="let x of trainersList; let i = index">
-        <app-card-trainer [trainer]= "x" [index]="i" (trainerDeletedEvento)="deleteTrainerPadre($event)"></app-card-trainer>
-        <button routerLink="/trainer/{{x.username}}" >Ver tarjeta de:{{x.username}}</button>
+    <div *ngFor="let x of trainersList; let i = index">
+        <app-card-trainer c  [trainer]= "x" [index]="i" (trainerDeletedEvento)="deleteTrainerPadre($event)"></app-card-trainer>
+        
     </div>
 
 </div>

@@ -3,14 +3,6 @@
        <img src="{{trainer.picture}}" alt="photoperfil">
        <h4>{{trainer.username}}</h4> 
     </div>
-    <div class="margin">
-       <p><span>Age:  </span>{{trainer.getAge()}}</p>
-       
-        <p><span>Hobby:  </span>{{trainer.hobby}}</p> 
-        </div>
        <button (click)="deleteHijo()">Delete</button> 
-
-   
-
-
+       <button  routerLink="/trainer/{{trainer.username}}">Show card</button>
 </div>

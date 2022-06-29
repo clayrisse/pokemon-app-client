@@ -4,8 +4,10 @@
     <div class="flexrow">
         <input class="desp" type="search" name="pokemon" list="pokemonlist" placeholder="Select a Pokemon">
         <datalist id="pokemonlist">
-            <option value="aceituna">
-       
+            <option value="bulbasaur">
+            <option value="charmander">
+            <option value="squirtle">
+            <option value="pikachu">
         </datalist>
         
        
@@ -16,8 +18,8 @@
     <section class="box">
        
          
-    <div class ="poke-cards">
-        <div class="card-wrapper" *ngFor="let poke of pokeObjList; let i = index">          
+    <div class ="poke-cards ">
+        <div class="card-wrapper " *ngFor="let poke of pokeObjList; let i = index">          
              <app-card-pokedex [pokedex]="poke"  [index]="i" ></app-card-pokedex>
          </div>
     </div> 
@@ -27,6 +29,7 @@
             <button class="one-button  button-arrow-plus" *ngIf="next!=null" (click)="getNext()"><p><i class="arrow right"></i></p></button>
         </div>
     </section>
+    
     
 </div>
 

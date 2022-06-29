@@ -1,21 +1,25 @@
-<p>trainer-page works!.......................................</p>
 <div class="container">
   <div class="flexcol">
-     <!-- <img src="" alt="photoperfil">
+    <!-- <img src="" alt="photoperfil">
      <h4>trainer.username</h4>  -->
-     <img src="{{trainer.picture}}" alt="photoperfil">
-     <h4>{{trainer.username}}</h4> 
+    <img class="img" src="{{ trainer.picture }}" alt="photoperfil" />
+    <h4>{{ trainer.username }}</h4>
   </div>
   <div class="margin">
-    <p><span>Age:  </span>{{trainer.getAge()}}</p> 
-      <p><span>Hobby:  </span>{{trainer.hobby}}</p> 
-      </div>
-     <button >Delete</button> 
-     <!-- <button (click)="deleteHijo()">Delete</button>  -->
+    <p><span>Age: </span>{{ trainer.getAge() }}</p>
+    <p><span>Hobby: </span>{{ trainer.hobby }}</p>
+  </div>
 
- 
-     <button routerLink="/trainer/:id">
-    </button>
-
-    
+  <button routerLink="/trainer">Back to Trainer List</button>
 </div>
+  <div class="imgflex">
+    <div class="position" *ngFor="let item of pokemonList">
+      <img class="pokes" [src]="item.image" alt="" />
+    </div>
+  </div>
+  <img
+    class="img0"
+    src="https://cdn.pixabay.com/photo/2019/11/18/15/46/pokemon-4635112_1280.png"
+    alt=""
+  />
+

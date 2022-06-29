@@ -1,13 +1,13 @@
 
 <div class="card">
 
-    <div class="card-title" (click)= "showDetails()">
+    <div class="card-title content" (click)= "showDetails()">
         <img class="image-card" height="60px" src={{pokedex.image}} alt="">
         <div class="poke-name">{{pokedex.name | titlecase}}</div>
         </div>
         
     
-    <div class="poke-details conntent-1 " *ngIf="isShown">
+    <div class="poke-details content-1" *ngIf="isShown">
          <p> HP: {{pokedex.hp}}</p>
          <p> Attack: {{pokedex.attack}}</p>
          <p> Defence: {{pokedex.defence}}</p>

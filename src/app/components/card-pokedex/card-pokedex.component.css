@@ -31,23 +31,30 @@
    align-items: center;
 }
 .content {
-    animation-duration: 3s;
-    animation-name: animation;
-    animation-iteration-count: 1;
-   
+  animation-duration: 3s;
+  animation-name: animation;
+  animation-iteration-count: 1;
+ 
+}
+
+.content-1 {
+  animation-delay: 0.5s; 
+}
+@keyframes animation {
+  from {
+    margin-top: 100%;
+    width: 200%
   }
-  
-  .content-1 {
-    animation-delay: 0.5s; 
+
+  to {
+    margin-top: 0%;
+    width: 100%;
   }
-  @keyframes animation {
-    from {
-      margin-top: 100%;
-      width: 300%
-    }
-  
-    to {
-      margin-top: 0%;
-      width: 100%;
-    }
-  }
+}
+.poke-details{
+  background-color: #CC0000;
+  padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
