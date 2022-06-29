@@ -1,9 +1,40 @@
-<hr>
-<div>{{trainer.username}}</div>
-<div>{{trainer.hobby}}</div>
-<button (click)="showPokemons(trainer.username)" >Show Pokemon</button>
+<div class="card">
+  <div class="big">
+    <div class="left user-img "><img src="{{trainer.picture}}"/></div>
+    <div class="right">
+      <h1>{{trainer.username}}</h1>
+      <p>Hobby: {{trainer.hobby}}</p>
+      <p>Birthdate: {{trainer.getAge}}</p>
+    </div>
+  </div>
+  
+  <!-- <p>Birthdate: {{trainer.ge/tAge()}}</p> -->
+  <div class="button-container">
+    <button (click)="showPokemons(trainer.username)" >Show Pokemon</button>
+  </div>
+  <!-- <div *ngFor="let poke of pokemonList" [ngStyle]="{'background-image': poke.image}"> -->
   <div *ngFor="let poke of pokemonList">
-    <div>{{poke.name}}</div>
-    <img height="50px" src={{poke.image}} alt="">
-    <button (click)="removePoke(trainer.username, poke.name)">Remove</button>
+      <div class=" big-poke">
+        <div class="tri left-poke">
+          <h2>{{poke.name}}</h2>
+          <img  class="poke-img" src={{poke.image}} alt="">
+        </div>
+        <div class="tri center-poke">
+          <p class="poke-text">Held Items: {{poke.items}}</p>
+          <p class="poke-text">Height: {{poke.height}}</p>
+          <p class="poke-text">Weight: {{poke.weight}}</p>
+          <p class="poke-text">Expirience: {{poke.experience}}</p>
+            <button (click)="removePoke(trainer.username, poke.name)">Remove</button>
+        </div>
+        <div class="tri right-poke">
+          <p class="poke-text">HP: {{poke.stats.hp}}</p>
+          <p class="poke-text">Attack: {{poke.stats.attack}}</p>
+          <p class="poke-text">Defence: {{poke.stats.defence}}</p>
+          <p class="poke-text">Special Attack: {{poke.stats.spAttack}}</p>
+          <p class="poke-text">Special Defence: {{poke.stats.spDefence}}</p>
+          <p class="poke-text">Speed: {{poke.stats.speed}}</p>
+      </div>
+    <!-- </div> -->
+    <!-- <hr/> -->
+  </div>
 </div>

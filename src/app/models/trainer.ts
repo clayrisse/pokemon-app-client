@@ -1,5 +1,9 @@
 export class Trainer {
-    constructor(private _username: string, private _birth: Date, private _picture: string, private _hobby: string ) { }
+    constructor(
+        private _username: string, 
+        private _birth: Date, 
+        private _picture: string,
+        private _hobby: string ) { }
 
    
     public get username(): string {

@@ -16,26 +16,25 @@ export class TeamCardComponent implements OnInit {
   trainer: Trainer;
   
   @Input()
-  jose: Observable<void> = new Observable()
-
-  
+  refresher: Observable<void> = new Observable()
 
   pokemonList: Pokemon[];
   isBtnOn: boolean;
-  // jose: EventListener;
   
   constructor(private teamCardService: TeamCardService) {
 
     this.pokemonList = [];
     this.trainer = new Trainer ('', new Date, '', '');
-    this.isBtnOn = false
+    // this.isBtnOn = false
+    this.isBtnOn = true
     
   }
 
   ngOnInit(): void {
-    this.jose.subscribe((res)=>{
-      this.showPokemons(this.trainer.username)
-      console.log("sejecutoh..............")
+
+    this.refresher.subscribe((res)=>{
+      this.getPokemons(this.trainer.username)
+      console.log("sejecutoh..............", this.isBtnOn)
     })
     // this.showPokemons(); 
   }
@@ -44,21 +43,18 @@ export class TeamCardComponent implements OnInit {
     this.pokemonList = []
     this.teamCardService.getTrainersPokemonList(username).subscribe(
       response => {
-        console.log('mis lista de pokes', response)
         for (const poke of response)  this.pokemonList.push(poke)
+        console.log('this.pokemonList', this.pokemonList)
     })
   }
 
   showPokemons(username: string){
-    console.log("11111111", this.isBtnOn)
-
     this.isBtnOn = !this.isBtnOn;
     if(this.isBtnOn) {
       this.getPokemons(username)
     } else {
       this.pokemonList = [];
     }
-    console.log("22222222", this.isBtnOn);
   }
 
   removePoke(username: string, pokename: string) {
