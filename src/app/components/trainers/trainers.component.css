@@ -1,6 +1,6 @@
-.title{
-    font-family:Pokemon Solid;
-    font-size:25px;
+.title {
+    font-family: Pokemon Solid;
+    font-size: 25px;
     color: #FFCB05;
     border: #0016b0 5px solid;
     background-color: #0016b0;
@@ -9,7 +9,7 @@
     width: 30%;
 }
 
-button{
+button {
     width: 10%;
     height: 40px;
     font-weight: bold;
@@ -23,10 +23,12 @@ button{
     border: 4px solid #0016b0;
     transition: all 0.9s ease;
 }
-button:hover{
+
+button:hover {
     background-color: #CC0000;
 }
-input{
+
+input {
     color: #0016b0;
     background-color: #FFCB05;
     border: 4px solid #0016b0;
@@ -37,21 +39,25 @@ input{
     font-weight: bold;
     padding-left: 10px;
 }
-.flex{
+
+.flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 20px;
 }
-.flexrow{
+
+.flexrow {
     display: flex;
     justify-content: center;
 }
-.flexcenter{
+
+.flexcenter {
     display: flex;
     justify-content: center;
 }
-.container{
+
+.container {
     background-color: #0016b0;
     display: flex;
     flex-direction: row;

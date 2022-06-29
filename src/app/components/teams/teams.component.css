@@ -1,72 +1,107 @@
-.title{
-    font-family:Pokemon Solid;
-    font-size:25px;
+.title {
+    font-family: Pokemon Solid;
+    font-size: 25px;
     color: #FFCB05;
     border: #0016b0 5px solid;
     background-color: #0016b0;
     padding: 0px 70px;
     text-align: center;
     width: 30%;
+    min-width: 130px;
 }
 
-button{
+
+button {
     width: 10%;
+    min-width: 120px;
     height: 40px;
     font-weight: bold;
     text-decoration: none;
     padding: 10px;
     margin-left: 20px;
-    font-size: 10px;
+    font-size: 12px;
     color: #0016b0;
     background-color: #FFCB05;
     border-radius: 6px;
     border: 4px solid #0016b0;
     transition: all 0.9s ease;
 }
-button:hover{
+
+button:hover {
     background-color: #CC0000;
 }
-.flex{
+
+.flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 20px;
 }
-.flexrow{
+
+.flexrow {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 40px;
 }
-.flexcenter{
+
+.flexcenter {
     display: flex;
     justify-content: center;
 }
-.flexrow2{
+
+.flexrow2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 5px;
 }
-.desp1{
+
+.desp1 {
     color: #0016b0;
     background-color: #FFCB05;
     border: 4px solid #0016b0;
     border-radius: 6px;
-    font-size: 10px;
+    font-size: 12px;
     width: 20%;
+    min-width: 120px;
     height: 39px;
     font-weight: bold;
     padding-left: 10px;
     margin-right: 20px;
 }
-.desp2{
+
+.desp2 {
     color: #0016b0;
     background-color: #FFCB05;
     border: 4px solid #0016b0;
     border-radius: 6px;
-    font-size: 10px;
+    font-size: 12px;
     width: 40%;
+    min-width: 120px;
     height: 39px;
     font-weight: bold;
     padding-left: 10px;
+}
+
+
+.box {
+    background-color: #0016b0;
+    padding: 40px 0;
+    /* margin-top: 600px; */
+    width: 95vw;
+    /* max-width: 1200px; */
+    min-width: 350px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    gap: 20px;
+
+}
+
+.try {
+    border: 5px solid #fff;
+    background-color: #fff;
+
 }

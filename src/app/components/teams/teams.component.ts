@@ -4,6 +4,7 @@ import { Pokemon } from 'src/app/models/pokemon';
 import { TeamsService } from 'src/app/services/teams.service';
 import { Trainer } from 'src/app/models/trainer';
 import { Subject } from 'rxjs';
+import { HttpResponseBase } from '@angular/common/http';
 
 @Component({
   selector: 'app-teams',
@@ -12,24 +13,19 @@ import { Subject } from 'rxjs';
 })
 export class TeamsComponent implements OnInit {
 
-  searchName: string
+  searchName: string    //html variable
+  trainerName: string;  //html variable
+
   pokeNameList: string[];
-  pokeObj: Pokemon;
   trainerList: Trainer[];
-  trainerName: string;
-  joseCode: Subject<void> = new Subject()
   
-
-
+  refreshListen: Subject<void> = new Subject()
+  
   constructor(private teamsService: TeamsService) { 
-
     this.searchName = '';
     this.pokeNameList = [];
-    this.pokeObj = new Pokemon(0,'','',0,0,0,0,0,0,0,0,0,0);
     this.trainerList = [];
     this.trainerName = '';
-
-   
   }
 
   ngOnInit(): void {
@@ -43,8 +39,7 @@ export class TeamsComponent implements OnInit {
         for (const trainer of response) {
           this.trainerList.push(trainer);
         }
-      }
-    )
+    })
   }
 
   getPokeNameBigList() {
@@ -60,23 +55,15 @@ export class TeamsComponent implements OnInit {
     console.log('searchName', searchName)
     this.teamsService.getPokeObj(searchName).subscribe(
       response => {
-        const { id, name, weight, height, held_items, base_experience } = response;
-        const hp  = response.stats[0].base_stat;
-        const attack = response.stats[1].base_stat;
-        const defence= response.stats[2].base_stat;
-        const spAttack = response.stats[3].base_stat;
-        const spDefence = response.stats[4].base_stat;
-        const speed  = response.stats[5].base_stat;
-        const image  = response.sprites.other.dream_world.front_default;
-        this.pokeObj = new Pokemon( id, name, image, hp, attack, defence, spAttack, spDefence, speed, base_experience, weight, height, held_items.length)
-      
+        console.log('respons----------------e', response )
+        response.held_items.length
       const pokeDto = {
           id: response.id, 
           name: response.name,
           weight: response.weight,
           height: response.height, 
-          items: 1, 
-          // items: response.held_items.length, 
+          // items: 1, 
+          items: response.held_items.length, 
           experience: response.base_experience,
           hp: response.stats[0].base_stat,
           attack: response.stats[1].base_stat,
@@ -85,7 +72,9 @@ export class TeamsComponent implements OnInit {
           spDefence: response.stats[4].base_stat,
           speed: response.stats[5].base_stat,
           image: response.sprites.other.dream_world.front_default
+    
         }
+        this.searchName = '';
         this.addPokeToTrainer(username, pokeDto);
       })
   }
@@ -94,8 +83,7 @@ export class TeamsComponent implements OnInit {
     console.log('entreeeeeee')
     this.teamsService.postPokeToTraiter(username, pokeDto).subscribe(
       response => {
-        this.joseCode.next()
-        console.log('taaaadaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+        this.refreshListen.next()
       })
   }
 
