@@ -3,9 +3,6 @@
 </div>
 
 <div class="container">
-    <!-- <div class="width"><button (click)="changeComponent1()" class="border flex"><img class="img"src="https://freepngimg.com/save/37483-pokeball-transparent-background/512x512" alt="poketball">POKEDEX</button></div>
-    <div class="width"><button (click)="changeComponent2()" class="border flex"><img class="img"src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c325.png" alt="picachu">TEAMS</button></div>
-    <div class="width"><button (click)="changeComponent3()" class="flex"><img class="img"src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png" alt="trainer"> TRAINERS</button></div> -->
     
     <div class="width"><button routerLink="pokedex" class="border flex"><img class="img"src="https://freepngimg.com/save/37483-pokeball-transparent-background/512x512" alt="poketball">POKEDEX</button></div>
     <div class="width"><button routerLink="/teams" class="border flex"><img class="img"src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c325.png" alt="picachu">TEAMS</button></div>
@@ -14,16 +11,6 @@
   </div>
 
 
-<div *ngIf="option == 1">
-    <app-pokedex></app-pokedex>
-</div>
-  
-  <div *ngIf="option == 2">
-    <app-teams></app-teams>
-  </div>
-  
-  <div *ngIf="option == 3">
-    <app-trainers></app-trainers>
-  </div>
+
 
   
