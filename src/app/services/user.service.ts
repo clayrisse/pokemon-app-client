@@ -9,7 +9,8 @@ import { Trainer } from '../models/trainer';
 })
 export class UserService {
 
-  private readonly baseUrl = 'http://localhost:8080/';
+  //private readonly baseUrl = 'http://localhost:8080/';
+  private readonly baseUrl = 'https://pikachuchu-server.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 

@@ -10,7 +10,7 @@ import { Trainer } from 'src/app/models/trainer';
 })
 export class TeamCardService {
   // private readonly pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon'
-  private readonly baseUrl = 'http://localhost:8080/api/trainer/';
+  private readonly baseUrl = 'https://pikachuchu-server.herokuapp.com/api/trainer/';
 
   constructor(private http: HttpClient) { }
 

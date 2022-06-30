@@ -11,7 +11,7 @@ export class PokedexService {
 
   private readonly baseUrl = 'https://pokeapi.co/api/v2/pokemon'
   private readonly pokeApiUrl = 'https://pokeapi.co/api/v2/pokemon'
-  private readonly girlsBaseUrl = 'http://localhost:8080/api/trainer/'
+  private readonly girlsBaseUrl = 'https://pikachuchu-server.herokuapp.com/api/trainer/'
 
 
   constructor(private http: HttpClient) { }
